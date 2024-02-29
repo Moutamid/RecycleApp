@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/material"
+        android:title="Recyclable"
+        android:icon="@drawable/ic_material"/>
+
+    <item
+        android:id="@+id/webviewarticles"
+        android:title="Feed"
+        android:icon="@drawable/ic_news"/>
+
+    <item
+        android:id="@+id/location"
+        android:title="Location"
+        android:icon="@drawable/ic_location"/>
+
+    <item
+        android:id="@+id/tracker"
+        android:title="Tracker"
+        android:icon="@drawable/ic_tracker"/>
+
+
+</menu>

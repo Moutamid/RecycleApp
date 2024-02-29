@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:padding="10dp"
+    android:background="@drawable/call_background_stroke">
+
+    <RelativeLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="395dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_percent=".9">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/kanitbold"
+            android:text="PAPER"
+            android:paddingStart="12dp"
+
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <TextView
+            android:id="@+id/item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/kanit_regular"
+            android:text="Paper Cup"
+            android:textColor="@color/black"
+            android:paddingStart="12dp"
+            android:layout_below="@+id/title"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.469" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/kanit_regular"
+            android:paddingStart="2dp"
+
+            android:text="19/08/2021"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="12dp"
+
+            android:textColor="@color/black"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.952"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.125" />
+
+        <TextView
+            android:id="@+id/notes"
+            android:layout_width="match_parent"
+            android:layout_toLeftOf="@id/menupop"
+            android:layout_marginTop="6dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kanit_regular"
+            android:maxLines="1"
+            android:text="Notes"
+            android:paddingStart="12dp"
+
+            android:textColor="#000"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/menupop"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="20dp"
+            android:elevation="20dp"
+            android:src="@drawable/ic_baseline_more_vert_24"
+            android:tint="@color/black"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout3" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

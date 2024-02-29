@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="two_colored_text">Don\'t have an account? <font color="#40B648"> <b>Sign up</b></font></string>
+    <string name="login">Already have an account? <font color="#40B648"> <b>Login</b></font></string>
+
+</resources>

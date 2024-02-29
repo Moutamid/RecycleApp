@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:background="#0C40B648"
+
+    android:orientation="vertical"
+    tools:context=".trackerdetails">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true"
+            android:onClick="back"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/newentry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@+id/back"
+            android:fontFamily="@font/kanitbold"
+            android:text="Track Details"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="60dp"
+    android:padding="10dp"
+    android:background="@drawable/text_bg">
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:hint="Type :"
+        android:textSize="16dp"
+        android:padding="10dp"
+        android:fontFamily="@font/kanit_regular"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/materialtypedetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kanit_regular"
+        android:hint="Type"
+        android:padding="10dp"
+        android:textColor="@color/black" />
+
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+
+    android:padding="10dp"
+    android:background="@drawable/text_bg"
+
+    >
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:hint="Details :"
+        android:textSize="16dp"
+        android:padding="10dp"
+
+        android:fontFamily="@font/kanit_regular"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/itemdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kanit_regular"
+        android:hint="Type"
+        android:padding="10dp"
+        android:textColor="@color/black" />
+
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+
+    android:padding="10dp"
+    android:background="@drawable/text_bg"
+
+    >
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:hint="Date :"
+        android:textSize="16dp"
+        android:padding="10dp"
+
+        android:fontFamily="@font/kanit_regular"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/datedetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kanit_regular"
+        android:hint="Type"
+        android:padding="10dp"
+        android:textColor="@color/black" />
+
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+
+    android:padding="10dp"
+    android:background="@drawable/text_bg"
+    >
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:hint="Notes :"
+        android:textSize="16dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/kanit_regular"
+
+
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/notesdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kanit_regular"
+        android:hint="Type"
+        android:padding="10dp"
+        android:textColor="@color/black" />
+
+</LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/edit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="350dp"
+        android:background="@color/black"
+        android:text="EDIT"
+        android:visibility="gone"
+        android:textColor="#fff"
+        app:backgroundTint="@color/teal_700" />
+
+
+</LinearLayout>
