@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:padding="30dp"
     android:background="#0C40B648"
-
     android:orientation="vertical"
     tools:context=".trackerdetails">
 

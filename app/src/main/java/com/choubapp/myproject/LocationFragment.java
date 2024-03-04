@@ -8,11 +8,6 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +15,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -39,6 +39,7 @@ import org.jetbrains.annotations.NotNull;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 public class LocationFragment extends Fragment {
@@ -140,10 +141,9 @@ public class LocationFragment extends Fragment {
                                         try{
                                             googleMap.clear();
 
-                                            if(spType.getSelectedItem().toString().equals("E-Waste Recycling")){
-                                                final KmlLayer ewasteLayer = new KmlLayer(googleMap, R.raw.ewaste,getActivity()
-                                                        .getApplicationContext()); //creating the kml layer
-                                                ewasteLayer.addLayerToMap(); //adding kml layer with the **google map**
+                                            if(spType.getSelectedItem().toString().equals("E-Waste Recycling")) {
+                                                KmlLayer layer = new KmlLayer(googleMap, R.raw.delhi_coordinates, getContext().getApplicationContext());
+                                                layer.addLayerToMap();
                                             }
 
                                             if(spType.getSelectedItem().toString().equals("Cash For Trash Stations")){
@@ -158,10 +158,19 @@ public class LocationFragment extends Fragment {
                                                 lightingwasteLayer.addLayerToMap();
                                             }
 
-                                            if(spType.getSelectedItem().toString().equals("2nd Hand Goods Collection Point")){
-                                                final KmlLayer secondhandLayer = new KmlLayer(googleMap, R.raw.secondhand,getActivity()
-                                                        .getApplicationContext());
-                                                secondhandLayer.addLayerToMap();
+                                            if(spType.getSelectedItem().toString().equals("2nd Hand Goods Collection Point")) {
+                                                KmlLayer secondhandLayer;
+                                                try {
+                                                    InputStream inputStream = getResources().openRawResource(R.raw.secondhand);
+                                                    secondhandLayer = new KmlLayer(googleMap, inputStream, getActivity().getApplicationContext());
+                                                    secondhandLayer.addLayerToMap();
+                                                    Toast.makeText(getContext(), "makrs " + secondhandLayer.getPlacemarks(), Toast.LENGTH_SHORT).show();
+
+                                                } catch (IOException e) {
+                                                    e.printStackTrace();
+                                                    Toast.makeText(getContext(), "error " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+
                                             }
 
 
@@ -180,11 +189,29 @@ public class LocationFragment extends Fragment {
 
                             }
                         });
+
                     }
 
                 }
             });
         }
+
     }
 
+    private void retrieveFileFromResource(GoogleMap mMap) {
+        try {
+
+            KmlLayer kmlLayer = new KmlLayer(mMap, R.raw.delhi_coordinates, getActivity().getApplicationContext());
+            kmlLayer.addLayerToMap();
+            Toast.makeText(getContext(), "" + kmlLayer.getPlacemarks(), Toast.LENGTH_SHORT).show();
+
+        } catch (IOException e) {
+            Toast.makeText(getContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        } catch (XmlPullParserException e) {
+            Toast.makeText(getContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+            e.printStackTrace();
+        }
+    }
 }
